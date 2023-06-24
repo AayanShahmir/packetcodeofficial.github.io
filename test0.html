@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-transform: capitalize;
+  }
+  body{
+    overflow: hidden;
+    background: #f1f1f1;
+  }
+  .log{
+    margin: 60px 0;
+    text-align: center;
+    border: 1px solid #13505b;
+    max-width: 100%;
+  }
+  .log img{
+    height: 80px;
+  }
+  .loader{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100px;
+    display: none;
+  }
+  .form{
+    max-width: 100%;
+    width: 350px;
+    text-align: center;
+    margin: 0 auto;
+    border: 1px solid #13505b;
+  }
+  input[type="text"],
+    input[type="email"],
+    input[type="password"]{
+        display: block;
+        margin:20px 0;
+        padding: 20px;
+        width: 300px;
+        height: 40px;
+        background: #fff;
+        border: none;
+        outline: none;
+        color: #383838;
+        font-size: 14px;
+    }
+    ::placeholder{
+      color: #383838;
+  }
+  .sub-btn{
+      width: 300px;
+      height: 40px;
+      text-align: center;
+      
+      background: #383838;
+      border-radius: 2px;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      display: block;
+      margin: 30px 0;
+  }
+  .checkbox{
+    -webkit-appearance: none;
+    appearance: none;
+    position: relative;
+    width: 15px;
+    height: 15px;
+    border-radius: 2px;
+    border:1px solid #383838;
+    cursor: pointer;
+    background: #fff;
+}
+.checkbox:checked{
+    background: #383838;
+}
+.checkbox::after{
+    content: '';
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    height: 100%;
+    pointer-events: none;
+    background-image: url(/public/img/check.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: none;
+}
+.checkbox:checked::after{
+    display: block;
+}
+label a{
+  color: #383838;
+}
+  @media (max-width: 333px) {
+    .log img{
+      height: 60px;
+    }
+    .form{
+      width: 250px;
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="password"]{
+      width: 240px;
+    }
+  }
+</style>
+<body>
+  <img src="load.gif" class="loader">
+  <div class="container">
+  <div class="log"><img src="/public/img/o.png" alt=""></div>
+        <div class="form">
+        <center><input type="text" autocomplete="off" id="name" placeholder="Name">
+            <input type="email" autocomplete="off" id="email" placeholder="email">
+            <input type="password" autocomplete="off" id="password" placeholder="password">
+            <input type="password" autocomplete="off" id="c-password" placeholder="confirm password">
+            <input type="checkbox" class="checkbox" id="terms-and-conds" checked>
+            <label for="terms-and-conds">agree to our <a href="#">terms and conditions</a></label>
+            <br>
+            <button class="sub-btn">Create account</button></center>    
+        </div>
+</div>
+</body>
+</html>
